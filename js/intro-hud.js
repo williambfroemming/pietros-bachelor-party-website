@@ -50,15 +50,15 @@
       class: 'intro',
       role: 'dialog',
       'aria-modal': 'true',
-      'aria-label': 'Loading Grand Theft Pietro. Press any key to skip.',
+      'aria-label': 'Loading Pietro’s Bachelor Party. Press any key to skip.',
       tabindex: '-1',
     },
       el('div', { class: 'intro__sun', 'aria-hidden': 'true' }),
       el('div', { class: 'intro__floor', 'aria-hidden': 'true' }),
       el('div', { class: 'intro__mark' },
-        el('span', { class: 'intro__kicker' }, 'Grand Theft'),
-        el('span', { class: 'intro__name' }, 'Pietro'),
-        el('span', { class: 'intro__script' }, EV.subtitle || 'Vice Weekend')
+        el('span', { class: 'intro__name' }, 'Pietro’s'),
+        el('span', { class: 'intro__kicker intro__kicker--below' }, 'Bachelor Party'),
+        el('span', { class: 'intro__script' }, EV.subtitle || 'Vice City')
       ),
       el('div', { class: 'intro__bottom' },
         tipEl,
@@ -145,7 +145,7 @@
           sr.textContent = '';
           clearInterval(timer);
         } else if (state === 'active') {
-          label.textContent = 'Vice Weekend';
+          label.textContent = 'Vice City';
           value.textContent = 'Mission active';
           sr.textContent = '';
         } else {

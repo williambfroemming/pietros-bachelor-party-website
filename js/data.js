@@ -6,8 +6,8 @@
    ============================================================ */
 window.VICE = {
   event: {
-    title: 'Grand Theft Pietro',
-    subtitle: 'Vice Weekend',
+    title: 'Pietro’s Bachelor Party',
+    subtitle: 'Vice City',
     city: 'Miami, FL',
     start: '2027-03-19T15:00:00-04:00',
     end:   '2027-03-21T23:59:00-04:00',

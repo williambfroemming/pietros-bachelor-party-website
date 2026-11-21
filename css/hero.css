@@ -319,3 +319,11 @@
   .hero__grid, .hero__stars, .hero__cue svg, .hero__plane-light { animation: none; }
   .hero__plane { animation: none; transform: translateX(72vw); }
 }
+
+/* Title: PIETRO'S / BACHELOR PARTY / Vice City */
+.hero__name { font-size: clamp(4.4rem, 21vw, 13rem); }
+.hero__kicker--below { margin: 0.12em 0 0; }
+.hero__script { margin-top: 0.05em; }
+@media (max-height: 560px) and (orientation: landscape) {
+  .hero__name { font-size: clamp(3.6rem, 24vh, 7.5rem); }
+}

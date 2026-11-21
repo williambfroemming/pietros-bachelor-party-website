@@ -250,3 +250,8 @@
   .wanted-star.is-pop,
   .wanted[data-level="5"] .wanted-star { animation: none; }
 }
+
+/* Title: PIETRO'S / BACHELOR PARTY / Vice City */
+.intro__name { font-size: clamp(4rem, 19vw, 11rem); }
+.intro__kicker--below { margin: 0.12em 0 0; }
+.intro__kicker--below + .intro__script { margin-top: 0.2em; }
