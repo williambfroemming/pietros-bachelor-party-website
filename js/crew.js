@@ -108,7 +108,7 @@
         h('div', { class: 'crew-card__face crew-card__front' },
           portrait(p, groom),
           role ? h('span', { class: 'crew-card__badge' }, role) : null,
-          h('span', { class: 'crew-card__hint', 'aria-hidden': 'true' }, 'Tap to reveal'),
+          h('span', { class: 'crew-card__hint', 'aria-hidden': 'true' }, 'Tap for case file'),
           h('span', { class: 'crew-card__caption' }, name)
         ),
         h('div', { class: 'crew-card__face crew-card__back', 'aria-hidden': 'true' },
