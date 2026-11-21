@@ -40,7 +40,7 @@ window.VICE = {
   /* ---------- EPITHET BANK (WS5) ----------------------------------------
      Unassigned GTA-flavored epithets — pick one per crew member once the
      list is confirmed. (Already taken: The Smuggler (Bill), The Getaway
-     Driver (Mario). Avoids everything used on the Mario site: Italian
+     Driver (Mario), The Tagger (Charlie), The Biscayne Bandit (Josh). Avoids everything used on the Mario site: Italian
      Stallion, The Don, King of New York, Brooklyn Blur, Consigliere, The OG,
      Cincinnati Streak, Margin Call, Closing Argument, Liquidity Provider,
      Doctor Is In, Conductor, Il Cugino, Controller, Mile High Cowboy.)
@@ -81,8 +81,22 @@ window.VICE = {
       bio: 'Formerly known as The Italian Stallion, the groom of the last job (Vegas) is back in the game, this time behind the wheel. A die-hard Indiana Hoosiers fan with a clean record of bringing the crew home. Pursuit units advised: he knows every back road out of Vice.',
       wanted: 4,
     },
-    { slug: 'crew3', photo: null, name: 'TBD', epithet: 'TBD', bio: 'TODO', wanted: 2 },
-    { slug: 'crew4', photo: null, name: 'TBD', epithet: 'TBD', bio: 'TODO', wanted: 3 },
+    {
+      slug: 'charlie',
+      photo: 'images/crew/charlie.jpg',
+      name: 'Charlie Kelsey',
+      epithet: 'The Tagger',
+      bio: "Hailing from the hills of Palo Alto, he can find a loophole in any contract before you've read the first page, and apparently a blank wall in any alley. Last spotted in a Lakers cap with a can of spray paint, insisting it's \"legally a mural.\" Off the clock he's unreachable: bucket hat on, cornhole bag in hand, zero billable hours in sight.",
+      wanted: 3,
+    },
+    {
+      slug: 'josh',
+      photo: 'images/crew/josh.jpg',
+      name: 'Josh Schwartz',
+      epithet: 'The Biscayne Bandit',
+      bio: "Wanted for questioning in the disappearance of a very large marlin off Biscayne Bay. Witnesses report a fist pump, a sunset and absolutely no remorse. Considered armed with a fishing rod and a cooler full of evidence. Approach with sunscreen.",
+      wanted: 4,
+    },
     { slug: 'crew5', photo: null, name: 'TBD', epithet: 'TBD', bio: 'TODO', wanted: 4 },
   ],
 
