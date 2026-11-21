@@ -34,7 +34,9 @@ window.VICE = {
     'TIP: Respect +100 for whoever remembers where the boat is docked.',
   ],
 
-  // Photos: images/crew/{slug}.png (falls back to .jpg/.jpeg/.webp, then a placeholder)
+  // Photos: set `photo: 'images/crew/{slug}.jpg'` once the portrait exists; `photo: null` shows the
+  // PHOTO PENDING placeholder. (Omit `photo` entirely to auto-probe .png/.jpg/.jpeg/.webp.)
+  // Groom only: optional `photoWide: 'images/crew/pietro-wide.jpg'` (16:9) for desktop.
   /* ---------- EPITHET BANK (WS5) ----------------------------------------
      Unassigned GTA-flavored epithets — pick one per crew member once the
      list is confirmed. (Already taken: The Smuggler (Bill), The Getaway
@@ -60,10 +62,12 @@ window.VICE = {
       bio: 'An Italian OG forged on the formidable streets of Addison, Illinois, now operating out of Marina Del Rey, where he is widely considered the best-dressed man in the jurisdiction. Known associates describe him as charming, impeccably tailored and dangerously good at talking his way into the best table in the room. Last seen heading to Miami for one final job before he goes legit.',
       wanted: 5,
       isGroom: true,
+      photo: 'images/crew/pietro.jpg',
       tilt: 0,
     },
     {
       slug: 'bill',
+      photo: 'images/crew/bill.jpg',
       name: 'Bill Froemming',
       epithet: 'The Smuggler',
       bio: "Silicon Valley's most prolific agentic AI auditing expert, now moonlighting as the operation's logistics man. Every flight, room and boat slip runs through him, so send him your itinerary or risk being left on the dock. Once Bill gets going, you can't stop him.",
@@ -71,14 +75,15 @@ window.VICE = {
     },
     {
       slug: 'mario',
+      photo: 'images/crew/mario.jpg',
       name: 'Mario Guagliardo',
       epithet: 'The Getaway Driver',
       bio: 'Formerly known as The Italian Stallion, the groom of the last job (Vegas) is back in the game, this time behind the wheel. A die-hard Indiana Hoosiers fan with a clean record of bringing the crew home. Pursuit units advised: he knows every back road out of Vice.',
       wanted: 4,
     },
-    { slug: 'crew3', name: 'TBD', epithet: 'TBD', bio: 'TODO', wanted: 2 },
-    { slug: 'crew4', name: 'TBD', epithet: 'TBD', bio: 'TODO', wanted: 3 },
-    { slug: 'crew5', name: 'TBD', epithet: 'TBD', bio: 'TODO', wanted: 4 },
+    { slug: 'crew3', photo: null, name: 'TBD', epithet: 'TBD', bio: 'TODO', wanted: 2 },
+    { slug: 'crew4', photo: null, name: 'TBD', epithet: 'TBD', bio: 'TODO', wanted: 3 },
+    { slug: 'crew5', photo: null, name: 'TBD', epithet: 'TBD', bio: 'TODO', wanted: 4 },
   ],
 
   /* ---------- MISSION IDEAS (WS5) — NOTHING BELOW IS BOOKED ---------------

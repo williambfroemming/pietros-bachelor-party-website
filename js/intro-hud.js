@@ -163,6 +163,14 @@
     }
     tick();
     timer = setInterval(tick, 1000);
+
+    // Desktop: the floating HUD only shows over the hero so it never covers content below.
+    const hero = document.getElementById('hero');
+    if (hero && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([e]) => box.classList.toggle('is-away', !e.isIntersecting), {
+        rootMargin: '-35% 0px 0px 0px',
+      }).observe(hero);
+    }
   }
 
   /* ---------------- wanted stars ---------------- */

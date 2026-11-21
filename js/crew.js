@@ -51,10 +51,14 @@
     return wrap;
   }
 
-  /** <img> that walks png → jpg → jpeg → webp → placeholder on error. */
+  /** <img> source list. `photo: 'path'` → that file; `photo: null` → placeholder only;
+   *  `photo` omitted → walks png → jpg → jpeg → webp → placeholder on error. */
   function portrait(p, eager) {
     const slug = String(p.slug || '').trim();
-    const srcs = slug ? IMG_EXTS.map(ext => `images/crew/${slug}.${ext}`) : [];
+    let srcs;
+    if (typeof p.photo === 'string' && p.photo.trim()) srcs = [p.photo.trim()];
+    else if (p.photo === null) srcs = [];
+    else srcs = slug ? IMG_EXTS.map(ext => `images/crew/${slug}.${ext}`) : [];
     srcs.push(PLACEHOLDER);
     let idx = 0;
     const img = h('img', {
@@ -75,10 +79,9 @@
     return img;
   }
 
-  /** Optional wide hero art for the groom (images/crew/{slug}-wide.png), desktop only. */
-  function tryWide(card, slug) {
-    if (!slug) return;
-    const src = `images/crew/${slug}-wide.png`;
+  /** Optional wide hero art for the groom (`photoWide` in data), desktop only. */
+  function tryWide(card, src) {
+    if (!src) return;
     const probe = new Image();
     probe.onload = () => {
       card.style.setProperty('--wide', `url("${src}")`);
@@ -121,7 +124,7 @@
       )
     );
     card.style.setProperty('--tilt', tiltFor(p, i) + 'deg');
-    if (groom) tryWide(card, String(p.slug || '').trim());
+    if (groom && typeof p.photoWide === 'string') tryWide(card, p.photoWide.trim());
     return card;
   }
 
