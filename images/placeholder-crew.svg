@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500" role="img" aria-label="Photo pending">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a1550"/>
+      <stop offset="0.35" stop-color="#5b2a86"/>
+      <stop offset="0.6" stop-color="#b83dba"/>
+      <stop offset="0.8" stop-color="#ff3d81"/>
+      <stop offset="1" stop-color="#ff7a59"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd166"/>
+      <stop offset="1" stop-color="#ff3d81"/>
+    </linearGradient>
+    <mask id="sunStripes">
+      <rect x="0" y="0" width="400" height="500" fill="#fff"/>
+      <rect x="0" y="262" width="400" height="5" fill="#000"/>
+      <rect x="0" y="278" width="400" height="7" fill="#000"/>
+      <rect x="0" y="296" width="400" height="9" fill="#000"/>
+      <rect x="0" y="316" width="400" height="11" fill="#000"/>
+    </mask>
+    <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="1.4" fill="#fff" fill-opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="500" fill="url(#sky)"/>
+  <rect width="400" height="500" fill="url(#dots)"/>
+
+  <!-- striped sun -->
+  <circle cx="200" cy="300" r="120" fill="url(#sun)" mask="url(#sunStripes)" opacity="0.95"/>
+
+  <!-- skyline -->
+  <path fill="#2a1145" d="M0 360 h30 v-40 h22 v40 h14 v-70 h26 v70 h12 v-30 h20 v30 h170 v-55 h18 v-25 h14 v80 h16 v-45 h24 v45 h30 v140 H0z"/>
+
+  <!-- palm left -->
+  <g fill="#120a24">
+    <path d="M58 500 C62 420 70 340 92 250 l8 2 C82 340 76 420 76 500z"/>
+    <path d="M96 250 C70 220 40 222 10 240 C40 226 70 230 94 256z"/>
+    <path d="M96 250 C80 210 52 196 22 196 C54 206 78 226 92 256z"/>
+    <path d="M96 250 C110 214 140 202 170 210 C140 214 116 230 100 258z"/>
+    <path d="M96 250 C126 236 156 244 178 266 C150 252 124 252 100 260z"/>
+    <path d="M96 250 C96 216 108 196 128 184 C112 202 104 224 102 256z"/>
+    <!-- palm right -->
+    <path d="M344 500 C340 430 330 360 312 290 l-8 2 C320 362 326 430 326 500z"/>
+    <path d="M308 290 C332 262 362 262 392 278 C362 268 334 272 310 296z"/>
+    <path d="M308 290 C322 254 350 240 380 240 C350 250 326 270 312 296z"/>
+    <path d="M308 290 C294 256 266 246 236 254 C266 258 290 272 304 298z"/>
+    <path d="M308 290 C280 278 252 286 232 306 C258 294 284 292 304 300z"/>
+  </g>
+
+  <!-- suspect silhouette -->
+  <g fill="#0d0820">
+    <circle cx="200" cy="270" r="58"/>
+    <path d="M86 500 C90 400 140 348 200 348 C260 348 310 400 314 500z"/>
+  </g>
+  <text x="200" y="296" text-anchor="middle" font-family="Anton, Impact, 'Arial Black', sans-serif" font-size="76" font-weight="700" fill="#ff2a6d">?</text>
+
+  <!-- PHOTO PENDING tag -->
+  <g transform="rotate(-6 200 90) translate(0 28)">
+    <rect x="70" y="62" width="260" height="56" fill="#0d0820"/>
+    <rect x="76" y="68" width="248" height="44" fill="none" stroke="#2de2e6" stroke-width="2"/>
+    <text x="200" y="100" text-anchor="middle" font-family="Anton, Impact, 'Arial Black', sans-serif" font-size="30" letter-spacing="3" fill="#fff4f8">PHOTO PENDING</text>
+  </g>
+</svg>

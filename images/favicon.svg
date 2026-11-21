@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="s" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd166"/>
+      <stop offset=".45" stop-color="#ff7a59"/>
+      <stop offset="1" stop-color="#ff3d81"/>
+    </linearGradient>
+    <clipPath id="c"><circle cx="32" cy="32" r="29"/></clipPath>
+  </defs>
+  <circle cx="32" cy="32" r="31" fill="#0d0820"/>
+  <g clip-path="url(#c)">
+    <rect width="64" height="64" fill="url(#s)"/>
+    <g fill="#5b2a86">
+      <rect y="40" width="64" height="2.5"/>
+      <rect y="46" width="64" height="3.5"/>
+      <rect y="53" width="64" height="5"/>
+    </g>
+  </g>
+  <path d="M20 12h15c8.3 0 13 4.7 13 11.6S43.3 35.4 35 35.4h-5.4V52H20z M29.6 20v7.6h4.6c2.7 0 4.2-1.4 4.2-3.8S36.9 20 34.2 20z"
+        fill="#ff2a6d" stroke="#0d0820" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" fill-rule="evenodd"/>
+  <path d="M20 12h15c8.3 0 13 4.7 13 11.6S43.3 35.4 35 35.4h-5.4V52H20z M29.6 20v7.6h4.6c2.7 0 4.2-1.4 4.2-3.8S36.9 20 34.2 20z"
+        fill="#ff2a6d" fill-rule="evenodd"/>
+</svg>

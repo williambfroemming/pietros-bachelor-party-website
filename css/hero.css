@@ -1,1 +1,329 @@
-/* hero.css — owned by workstream; see PLAN.md §3 */
+/* ============================================================
+   HERO (WS1) — key-art poster: sunset sky, striped sun, skyline,
+   palms, synthwave grid floor, plane, title lockup.
+   ============================================================ */
+.hero {
+  --horizon: 66%;
+  --sun-size: min(72vw, 960px);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100svh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(4.5rem, 10vh, 7rem) 1rem clamp(6rem, 14vh, 9rem);
+  text-align: center;
+  background:
+    radial-gradient(ellipse 70% 45% at 50% var(--horizon), rgba(255, 209, 102, 0.55), rgba(255, 122, 89, 0) 70%),
+    linear-gradient(180deg,
+      #160b2e 0%,
+      var(--sunset-4) 22%,
+      var(--sunset-3) 42%,
+      var(--sunset-2) 56%,
+      var(--sunset-1) var(--horizon),
+      var(--sunset-1) 100%);
+}
+
+.hero__defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+.hero__scene {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ---------- stars ---------- */
+.hero__stars {
+  position: absolute;
+  inset: 0 0 50% 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 22% 8%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 35% 26%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 48% 12%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 61% 22%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 6%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 84% 16%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 92% 30%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 6% 34%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 55% 36%, #fff 50%, transparent 51%);
+  opacity: 0.8;
+  mask-image: linear-gradient(#000 30%, transparent);
+  -webkit-mask-image: linear-gradient(#000 30%, transparent);
+  animation: hero-twinkle 4s ease-in-out infinite alternate;
+}
+@keyframes hero-twinkle { from { opacity: 0.45; } to { opacity: 0.9; } }
+
+/* ---------- striped sun ---------- */
+.hero__sun {
+  position: absolute;
+  left: 50%;
+  top: var(--horizon);
+  width: var(--sun-size);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: linear-gradient(180deg, #fff1a8 0%, var(--gold) 22%, #ff9a5a 40%, var(--neon-pink) 52%);
+  box-shadow: 0 0 80px rgba(255, 209, 102, 0.45), 0 0 180px rgba(255, 61, 129, 0.45);
+  /* bands get thicker toward the horizon (the circle's midpoint) */
+  --sun-stripes: linear-gradient(180deg,
+    #000 0 16%, transparent 16% 17%,
+    #000 17% 22%, transparent 22% 23.6%,
+    #000 23.6% 28%, transparent 28% 30.2%,
+    #000 30.2% 34%, transparent 34% 37%,
+    #000 37% 40%, transparent 40% 43.6%,
+    #000 43.6% 45.6%, transparent 45.6% 49.6%,
+    #000 49.6% 100%);
+  mask-image: var(--sun-stripes);
+  -webkit-mask-image: var(--sun-stripes);
+}
+
+/* ---------- plane ---------- */
+.hero__plane {
+  position: absolute;
+  top: 13%;
+  left: 0;
+  width: clamp(26px, 3vw, 40px);
+  color: var(--palm);
+  opacity: 0.85;
+  transform: translateX(110vw);
+  animation: hero-plane 46s linear infinite;
+  animation-delay: -12s;
+}
+.hero__plane svg { width: 100%; height: auto; fill: currentColor; }
+.hero__plane-light {
+  position: absolute;
+  left: 46%; top: 58%;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: #ff4d4d;
+  box-shadow: 0 0 6px 2px rgba(255, 77, 77, 0.8);
+  animation: hero-blink 1.2s steps(2, jump-none) infinite;
+}
+@keyframes hero-plane {
+  from { transform: translateX(110vw) translateY(0); }
+  to   { transform: translateX(-15vw) translateY(-4vh); }
+}
+@keyframes hero-blink { 0% { opacity: 1; } 100% { opacity: 0; } }
+
+/* ---------- skyline ---------- */
+.hero__skyline {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: calc(100% - var(--horizon));
+  width: 100%;
+  height: clamp(80px, 14vh, 150px);
+  opacity: 0.92;
+}
+.hero__skyline-shape { fill: #2a1145; }
+.hero__skyline-windows { fill: var(--gold); opacity: 0.75; }
+
+/* ---------- synthwave floor ---------- */
+.hero__floor {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  top: var(--horizon);
+  overflow: hidden;
+  perspective: 260px;
+  perspective-origin: 50% 0%;
+  background: linear-gradient(180deg, #3a0f5a 0%, #1f0a3a 45%, var(--night) 100%);
+  border-top: 2px solid #ffb3c9;
+  box-shadow: 0 -2px 24px rgba(255, 42, 109, 0.9);
+}
+.hero__grid {
+  position: absolute;
+  left: -100%; right: -100%;
+  top: 0;
+  height: 300%;
+  transform-origin: 50% 0;
+  transform: rotateX(72deg);
+  background-image:
+    linear-gradient(90deg, rgba(255, 42, 109, 0.85) 2px, transparent 2px),
+    linear-gradient(0deg, rgba(255, 42, 109, 0.85) 2px, transparent 2px);
+  background-size: 64px 64px;
+  background-position: 50% 0;
+  animation: hero-grid 1.6s linear infinite;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 12%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 12%);
+}
+@keyframes hero-grid {
+  from { background-position: 50% 0; }
+  to   { background-position: 50% 64px; }
+}
+
+/* ---------- palms ---------- */
+.hero__palm {
+  position: absolute;
+  bottom: -2%;
+  height: 96%;
+  width: auto;
+  aspect-ratio: 1 / 2;
+  fill: var(--palm);
+  overflow: visible;
+}
+.hero__palm--left  { left: max(-9%, -120px); }
+.hero__palm--right { right: max(-9%, -120px); transform: scaleX(-1); }
+.hero__palm--back-left,
+.hero__palm--back-right {
+  height: 62%;
+  bottom: calc(100% - var(--horizon) - 4%);
+  fill: #2a1145;
+}
+.hero__palm--back-left  { left: 13%; transform: scaleX(-1); }
+.hero__palm--back-right { right: 12%; }
+
+/* ---------- title lockup ---------- */
+.hero__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin-top: -4vh;
+}
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.86;
+  margin: 0;
+}
+.hero__kicker {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0.1em;
+  font-size: clamp(1.6rem, 5.4vw, 3.6rem);
+  letter-spacing: 0.16em;
+  margin-right: -0.16em; /* optically recentre tracked text */
+  color: var(--text);
+  -webkit-text-stroke: 0.16em var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 0.07em 0.07em 0 var(--ink);
+}
+.hero__name {
+  position: relative;
+  font-size: clamp(5.4rem, 27vw, 15.5rem);
+  letter-spacing: 0.01em;
+  color: #fff;
+  -webkit-text-stroke: 0.075em var(--ink);
+  paint-order: stroke fill;
+  text-shadow:
+    0.055em 0.055em 0 var(--ink),
+    0 0 0.4em rgba(255, 42, 109, 0.35);
+}
+/* sunset-filled extrusion layer behind the white face */
+.hero__name::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translate(0.035em, 0.035em);
+  background: linear-gradient(180deg, var(--gold) 0%, var(--sunset-1) 40%, var(--neon-pink) 75%, var(--sunset-3) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 0.075em var(--ink);
+  paint-order: stroke fill;
+  text-shadow: none;
+}
+.hero__script {
+  font-family: var(--font-script);
+  font-size: clamp(2.6rem, 8vw, 5.4rem);
+  line-height: 1;
+  color: #ffe1ec;
+  transform: rotate(-6deg);
+  margin-top: -0.3em;
+  padding: 0 0.3em;
+  text-shadow:
+    0 0 4px #fff,
+    0 0 12px var(--neon-pink),
+    0 0 28px var(--neon-pink),
+    0 0 52px var(--neon-pink),
+    3px 3px 0 var(--ink);
+}
+.hero__meta {
+  margin-top: clamp(1rem, 3vh, 1.75rem);
+  font-family: var(--font-hud);
+  font-weight: 700;
+  font-size: clamp(0.85rem, 2.2vw, 1.15rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: rgba(13, 8, 32, 0.78);
+  border: 2px solid var(--ink);
+  border-left: 4px solid var(--neon-cyan);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 0.45em 1.1em 0.4em;
+}
+.hero__meta-dot { color: var(--neon-pink); margin: 0 0.35em; }
+
+/* ---------- scroll cue ---------- */
+.hero__cue {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1.25rem, 4vh, 2.5rem);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  font-family: var(--font-hud);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px rgba(45, 226, 230, 0.7);
+  padding: 0.5rem 0.75rem;
+}
+.hero__cue span { margin-right: -0.3em; }
+.hero__cue svg {
+  width: 26px; height: 26px;
+  filter: drop-shadow(0 0 6px rgba(45, 226, 230, 0.8));
+  animation: hero-bob 1.6s ease-in-out infinite;
+}
+.hero__cue:hover { color: var(--text); }
+@keyframes hero-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+/* ---------- responsive ---------- */
+@media (max-width: 820px) {
+  .hero { --horizon: 68%; --sun-size: min(104vw, 480px); }
+  .hero__palm { height: 64%; }
+  .hero__palm--left  { left: -30vw; }
+  .hero__palm--right { right: -30vw; }
+  .hero__palm--back-left,
+  .hero__palm--back-right { height: 40%; }
+  .hero__palm--back-left  { left: 4%; }
+  .hero__palm--back-right { right: 2%; }
+  .hero__content { margin-top: -8vh; }
+}
+@media (max-width: 600px) {
+  .hero__palm--back-left, .hero__palm--back-right { display: none; }
+}
+
+@media (max-height: 560px) and (orientation: landscape) {
+  .hero__name { font-size: clamp(4rem, 30vh, 9rem); }
+  .hero__palm--back-left, .hero__palm--back-right { display: none; }
+}
+
+/* ---------- reduced motion: static poster ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .hero__grid, .hero__stars, .hero__cue svg, .hero__plane-light { animation: none; }
+  .hero__plane { animation: none; transform: translateX(72vw); }
+}
+
+/* Title: PIETRO'S / BACHELOR PARTY / Vice City */
+.hero__name { font-size: clamp(4.4rem, 21vw, 13rem); }
+.hero__kicker--below { margin: 0.12em 0 0; }
+.hero__script { margin-top: 0.05em; }
+@media (max-height: 560px) and (orientation: landscape) {
+  .hero__name { font-size: clamp(3.6rem, 24vh, 7.5rem); }
+}
