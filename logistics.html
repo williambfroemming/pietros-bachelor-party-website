@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flight Plan — Grand Theft Pietro</title>
+  <meta name="description" content="Arrivals, departures, rooms and logistics for Pietro's bachelor party in Miami." />
+  <meta name="theme-color" content="#1a1033" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&family=Rajdhani:wght@500;600;700&family=Yellowtail&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/logistics.css" />
+</head>
+<body>
+
+  <!-- NAV (copied from index.html) -->
+  <nav class="nav" id="nav" aria-label="Main">
+    <div class="nav__inner">
+      <a class="nav__logo" href="index.html">GTP<span class="nav__logo-dot">·</span>2027</a>
+      <ul class="nav__links">
+        <li><a class="nav__link" href="index.html#crew">Most Wanted</a></li>
+        <li><a class="nav__link" href="index.html#missions">Missions</a></li>
+        <li><a class="nav__link" href="index.html#safehouse">Safehouse</a></li>
+        <li><a class="nav__link nav__link--active" href="logistics.html" aria-current="page">Flight Plan</a></li>
+      </ul>
+      <button class="nav__hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false" aria-controls="navMobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="navMobile">
+      <a class="nav__mobile-link" href="index.html#crew">Most Wanted</a>
+      <a class="nav__mobile-link" href="index.html#missions">Missions</a>
+      <a class="nav__mobile-link" href="index.html#safehouse">Safehouse</a>
+      <a class="nav__mobile-link" href="logistics.html">Flight Plan</a>
+    </div>
+  </nav>
+
+  <main class="section logistics" id="logistics">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-label">// Travel intel</p>
+        <h1 class="section-title">Flight Plan</h1>
+        <p class="section-script">Who's landing when</p>
+      </header>
+      <div class="logistics__mount" id="logisticsMount"></div>
+    </div>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="footer__grid" aria-hidden="true"></div>
+    <p class="footer__title">Grand Theft Pietro</p>
+    <p class="footer__text" id="footerText">Miami, March 2027 &nbsp;★&nbsp; What happens in Vice, stays in Vice.</p>
+  </footer>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/core.js" defer></script>
+  <script src="js/logistics.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grand Theft Pietro — Miami, March 19–21, 2027</title>
+  <meta name="description" content="Pietro's bachelor party. Miami, March 19–21, 2027. What happens in Vice, stays in Vice." />
+  <meta name="theme-color" content="#1a1033" />
+  <meta property="og:title" content="Grand Theft Pietro — Vice Weekend" />
+  <meta property="og:description" content="Pietro's bachelor party · Miami · March 19–21, 2027" />
+  <meta property="og:image" content="images/og-image.png" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&family=Rajdhani:wght@500;600;700&family=Yellowtail&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/intro-hud.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/crew.css" />
+  <link rel="stylesheet" href="css/missions.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#crew">Skip to content</a>
+
+  <div id="intro"></div>
+
+  <!-- NAV (WS0) -->
+  <nav class="nav" id="nav" aria-label="Main">
+    <div class="nav__inner">
+      <a class="nav__logo" href="#hero">GTP<span class="nav__logo-dot">·</span>2027</a>
+      <div class="nav__wanted" id="wanted" aria-hidden="true"></div>
+      <ul class="nav__links">
+        <li><a class="nav__link" href="#crew">Most Wanted</a></li>
+        <li><a class="nav__link" href="#missions">Missions</a></li>
+        <li><a class="nav__link" href="#safehouse">Safehouse</a></li>
+        <li><a class="nav__link" href="logistics.html">Flight Plan</a></li>
+      </ul>
+      <button class="nav__hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false" aria-controls="navMobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="navMobile">
+      <a class="nav__mobile-link" href="#crew">Most Wanted</a>
+      <a class="nav__mobile-link" href="#missions">Missions</a>
+      <a class="nav__mobile-link" href="#safehouse">Safehouse</a>
+      <a class="nav__mobile-link" href="logistics.html">Flight Plan</a>
+    </div>
+  </nav>
+
+  <div id="hud"></div>
+
+  <main>
+    <section class="hero" id="hero">
+      <!-- WS1:hero START -->
+      <div class="container">
+        <h1 class="section-title">Grand Theft Pietro</h1>
+        <p class="section-script">Vice Weekend</p>
+        <p class="section-label">Miami, FL · March 19–21, 2027</p>
+      </div>
+      <!-- WS1:hero END -->
+    </section>
+
+    <section class="section" id="crew">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-label">// Persons of interest</p>
+          <h2 class="section-title">Most Wanted</h2>
+          <p class="section-script">The crew making it happen</p>
+        </header>
+        <div class="crew__mount" id="crewMount"></div>
+      </div>
+    </section>
+
+    <section class="section" id="missions">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-label">// Mission log</p>
+          <h2 class="section-title">Missions</h2>
+          <p class="section-script">March 19–21 · Miami</p>
+        </header>
+        <div class="missions__mount" id="missionsMount"></div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="safehouse">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-label">// Base of operations</p>
+          <h2 class="section-title">Safehouse</h2>
+          <p class="section-script">Lay low. Look good.</p>
+        </header>
+        <div class="safehouse__mount" id="safehouseMount"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (WS0) -->
+  <footer class="footer" id="footer">
+    <div class="footer__grid" aria-hidden="true"></div>
+    <p class="footer__title">Grand Theft Pietro</p>
+    <p class="footer__text" id="footerText">Miami, March 2027 &nbsp;★&nbsp; What happens in Vice, stays in Vice.</p>
+  </footer>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/core.js" defer></script>
+  <script src="js/intro-hud.js" defer></script>
+  <script src="js/crew.js" defer></script>
+  <script src="js/missions.js" defer></script>
+</body>
+</html>
